@@ -19,8 +19,12 @@ app.use(
   })
 );
 
-app.get("/health", (req, res) => {
+app.get("/", (req, res) => {
   return res.status(200).json({ message: `Server is up and running` });
+});
+
+app.get("/health", (req, res) => {
+  return res.status(200).json({ message: `Server is up and running Health` });
 });
 
 app.use("/api/v1", routes);
